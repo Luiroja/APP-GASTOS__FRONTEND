@@ -1,0 +1,24 @@
+.gasto-input {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .gasto-input__container {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 3rem;
+  }
+  
+  
+  
+  .gasto-input__text, .gasto-input__number {
+    border: none;
+    width: 100%;
+    max-width: 500px;
+    font-size: 1rem;
+    outline: none;
+  }

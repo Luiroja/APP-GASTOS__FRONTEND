@@ -1,0 +1,13 @@
+.gasto-input__button {
+    background-color: rgba(15, 6, 99, 0.384);
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem;
+    border-radius: 5px;
+    border : none;
+    font-size:1rem;
+    font-weight: bold;
+  }
+  .gasto-input__button:active {
+    background-color: rgba(15, 6, 99, 0.7);
+  }
