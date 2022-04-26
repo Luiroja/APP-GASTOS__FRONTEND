@@ -1,0 +1,18 @@
+.gasto-list {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 500px
+}
+.gasto-input__container {
+    margin-bottom : 3rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+
+.gasto-input__button {
+    background-color: rgba(15, 6, 99, 0.384);
+  }
+  .gasto-input__button:active {
+    background-color: rgba(15, 6, 99, 0.7);
+  }

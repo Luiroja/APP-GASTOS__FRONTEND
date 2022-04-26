@@ -1,13 +1,13 @@
 import React from 'react';
-import './Button.css';
+import '../Button/Button.css';
 
 function Button(props) {
-    const {className, children} = props;
-    console.log({className});
+    const {className, children, onClick} = props;
+    
     return (
         <button 
-        className= {`${className}`}
-        onClick={() =>console.log('el boton fue presionado')}
+        className= {`${className} button`}
+        onClick={onClick}
        >{children}
        </button>
         
