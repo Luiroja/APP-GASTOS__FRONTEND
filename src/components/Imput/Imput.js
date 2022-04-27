@@ -1,5 +1,5 @@
 import React from 'react';
-import './Imput.css'
+import '../Imput/Imput.css'
 
 function Imput ({className,value, placeholder, onChange, type}) {
     return(

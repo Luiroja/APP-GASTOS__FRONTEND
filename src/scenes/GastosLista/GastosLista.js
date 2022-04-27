@@ -1,7 +1,7 @@
 
 import React, {useState, useEffect} from 'react'
 import {useNavigate} from 'react-router-dom';
-import {fetchGastos, createGasto} from '../../api'
+import {fetchGastos, createGasto, deleteGasto} from '../../api'
 import '../../../src/App.css';
 
 import Button from '../../components/Button/Button'
@@ -13,6 +13,8 @@ function GastoLista ({token}) { //TODO: recibir el token como props
     const [text, setText]= useState("");
     const [cantidad, setCantidad]= useState("");
     const [gastos, setGastos]= useState([])
+
+    const [loader, setLoader]= useState(false);
     const navigate =useNavigate();
 
 
@@ -24,9 +26,11 @@ function GastoLista ({token}) { //TODO: recibir el token como props
    
   
     useEffect (()=> { //Mandar token
+      setLoader(true);
       fetchGastos(token)
       .then ((res)=> {
-        setGastos(res.data);
+        setGastos(res.data)
+        setLoader(false);
       })
       .catch((err)=> {
         console.error(err);
@@ -50,10 +54,22 @@ function GastoLista ({token}) { //TODO: recibir el token como props
 
 
 
+    const onDeleteGasto = (id) => {
+      deleteGasto(id, token)
+      .then((res)=> {
+       console.log(res.data);
+        setGastos(gastos.filter((e)=> e._id !== id))
+      })
+      .catch ((err)=> {
+        console.error(err);
+      })
+    }
+
+
 
     return (
       <div className="gasto-lista">
-        <div className = "gasto-input__container">
+        <div className="gasto-input__container">
           <h2>  Bienvenid@ </h2>
         <Imput value={text} placeholder="Ingresa un gasto" type="text" onChange ={(e)=> setText(e.target.value)}/>
 
@@ -62,10 +78,11 @@ function GastoLista ({token}) { //TODO: recibir el token como props
 
        <Button className="gasto-input__button" onClick={addGastos}>Ingresar Tarea</Button>
        </div>
+       
 
-
+        {loader && (<p style={{color: 'white'}}>Cargando ...</p>)}
        {gastos.map((gasto) => (
-         <Gasto key={gasto._id} text={gasto.text} cantidad={gasto.cantidad} />
+         <Gasto key={gasto._id} text={gasto.text} cantidad={gasto.cantidad} onDelete= {()=>onDeleteGasto(gasto._id)}/>
        )).reverse()}
        
        </div>

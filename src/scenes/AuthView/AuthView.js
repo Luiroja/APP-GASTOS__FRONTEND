@@ -1,5 +1,6 @@
 import React from 'react';
 import {Outlet} from 'react-router-dom';
+import '../AuthView/AuthView.css'
 
 
 function AuthView ({setToken}) {

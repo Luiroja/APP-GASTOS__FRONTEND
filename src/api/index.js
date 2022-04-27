@@ -40,3 +40,13 @@ export const createGasto = ({text,cantidad, token}) => {
         },
     })
 }
+
+export const deleteGasto = (id, token) => {
+    return axios.delete(`http://localhost:5000/api/gastos/${id}`, 
+    {
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    })
+}
