@@ -15,8 +15,7 @@ function Login ({setToken}) {
 
 
     const makeLogin = () => {
-        // TODO: Hacer login en API
-        //if successful
+    
     login (email, password)
       .then ((res) => {
         const user = res.data

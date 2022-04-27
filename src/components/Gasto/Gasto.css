@@ -1,0 +1,19 @@
+.gasto {
+    width: 100%;
+    
+    background: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    text-align: left;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .gasto__texto { 
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }

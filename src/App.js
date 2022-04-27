@@ -15,19 +15,7 @@ import SignUp from '../src/components/SignUp'
 function App() {
 
   const [token, setToken] = useState(null);
-
   console.log({token});
- 
-  /*const handleOnSubmit =  (e)=> {
-    e.preventDefault();
-   createGasto(text, cantidad)
-  
-  }
-   setInput(input.concat({
-     _id: "62561dc70054bca384475daf" + Math.floor(Math.random() *10),
-     text: event.target.text,
-     cantidad: event.target.cantidad
-   })) */
 
 
   return (
@@ -36,8 +24,8 @@ function App() {
       <Routes>
           <Route path="/" element={<GastosLista token={token}/>}/>
           <Route path="auth" element={<AuthView setToken={setToken}/>}>
-            <Route index element={<Login/>}/>
-            <Route path="login" element={<Login />}/>
+            <Route index element={<Login setToken={setToken}/>}/>
+            <Route path="login" element={<Login setToken={setToken}/>}/>
             <Route path="signup" element={<SignUp/>}/>
             </Route>
       </Routes>
